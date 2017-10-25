@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # attach or create a tmux session named..
-tmca () {
+tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
 }
 
-sshd () {
+ssh-d () {
 	ssh datawarehouse.internal.vikingco.com
 }
 
