@@ -5,4 +5,7 @@ tmca () {
         tmux attach -d -t $1 || tmux new -s $1
 }
 
+sshd () {
+	ssh datawarehouse.internal.vikingco.com
+}
 
