@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# attach or create a tmux session named..
+tmca () {
+        tmux attach -d -t $1 || tmux new -s $1
+}
+
+
