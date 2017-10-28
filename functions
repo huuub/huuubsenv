@@ -9,3 +9,15 @@ ssh-d () {
 	ssh datawarehouse.internal.vikingco.com
 }
 
+function sqlc() {
+	psql -d datawarehouse -t -c "$1"
+}
+
+
+function writeTabColsOfSchema () {
+echo Each table goes to file : table.cols
+for table in $(sqlc "select table_name from information_schema.tables where table_schema='$1'"); do
+	sqlc "select column_name from INFORMATION_SCHEMA.COLUMNS where table_name ='$table' and table_schema='$1'" > $table.cols
+done
+}
+
