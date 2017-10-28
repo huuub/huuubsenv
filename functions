@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # attach or create a tmux session named..
-tm-ca () {
+function tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
 }
 
-ssh-d () {
+function ssh-d () {
 	ssh datawarehouse.internal.vikingco.com
 }
 
@@ -15,11 +15,11 @@ function sqlc() {
 
 
 function writeTabColsOfSchema () {
-echo Each table goes to file : table.cols
-for table in $(sqlc "select table_name from information_schema.tables where table_schema='$1'"); do
-	outfile=$(echo $table | tr '[:upper:]' '[:lower:]').cols
-	sqlc "select column_name from INFORMATION_SCHEMA.COLUMNS where table_name ='$table' and table_schema='$1'" > $outfile
-done
+	echo Each table goes to file : table.cols
+	for table in $(sqlc "select table_name from information_schema.tables where table_schema='$1'"); do
+		outfile=$(echo $table | tr '[:upper:]' '[:lower:]').cols
+		sqlc "select column_name from INFORMATION_SCHEMA.COLUMNS where table_name ='$table' and table_schema='$1'" > $outfile
+	done
 }
 
 function writeCsvCols() {
@@ -35,9 +35,9 @@ function writeCsvCols() {
 
 function diffFiles() {
 	for csvfile in $(echo ${1}*); do
-		echo "****** $csvfile ******"
 		dbfile=${csvfile#$1}
-		diff -w -B $csvfile $dbfile
+		echo "****** diff $dbfile -> $csvfile ******"
+		diff -w -B $dbfile $csvfile
 	done
 }
 
