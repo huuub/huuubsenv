@@ -17,7 +17,27 @@ function sqlc() {
 function writeTabColsOfSchema () {
 echo Each table goes to file : table.cols
 for table in $(sqlc "select table_name from information_schema.tables where table_schema='$1'"); do
-	sqlc "select column_name from INFORMATION_SCHEMA.COLUMNS where table_name ='$table' and table_schema='$1'" > $table.cols
+	outfile=$(echo $table | tr '[:upper:]' '[:lower:]').cols
+	sqlc "select column_name from INFORMATION_SCHEMA.COLUMNS where table_name ='$table' and table_schema='$1'" > $outfile
 done
+}
+
+function writeCsvCols() {
+	mkdir -p ./csvCols
+	for csv in $(echo *.csv); do
+		lowerCsv=$(echo $csv | tr '[:upper:]' '[:lower:]')
+		table=${lowerCsv%.*};	# deletes shortest possible '*.' from the right
+		header=$(head -1 $csv)
+		utfToAsciiHeader=$(echo $header| uconv -f UTF-8 -t ASCII --remove-signature)
+		echo $utfToAsciiHeader | tr '[:upper:]' '[:lower:]'| sed -e 's/,/\n/g' > ./csvCols/csv.$table.cols
+	done
+}
+
+function diffFiles() {
+	for csvfile in $(echo ${1}*); do
+		echo "****** $csvfile ******"
+		dbfile=${csvfile#$1}
+		diff -w -B $csvfile $dbfile
+	done
 }
 
