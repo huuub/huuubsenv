@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ALIASES
-alias l="ls -ltra | grep -i "@:wq
+alias l="ls -ltra | grep -i "
 
 
 # attach or create a tmux session named..
