@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ALIASES
+alias l="ls -ltra | grep -i "@:wq
+
+
 # attach or create a tmux session named..
 function tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
