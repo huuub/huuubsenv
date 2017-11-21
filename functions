@@ -1,10 +1,13 @@
 #!/bin/bash
 
+## EXPORT VARIABLES
+export myFunctions="/home/jeroen.houben/git/huuubsenv/functions"
+
 # ALIASES
 alias l="ls -ltra | grep -i "
 alias python=python3
 
-
+## FUNCTIONS
 # attach or create a tmux session named..
 function tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
@@ -48,5 +51,15 @@ function diffFiles() {
 		echo "****** diff $dbfile -> $csvfile ******"
 		diff -w -B $dbfile $csvfile
 	done
+}
+
+## JIM RELATED
+Function RecrJimSchemaAndStartJim2PG () {
+        echo "We will 1. Recreate the schema of jim_sbss_replica, 2. drop current_file.txt (to be able to load it again) and 3. start the load again"
+        readonly CodeDir=/data/programs/jimbbs2pg/code/
+        psql -d datawarehouse -a -f $CodeDir/drop_foreign_key_constraints.sql
+        psql -d datawarehouse -a -f $CodeDir/create_jim_sbss_replica_tables.sql
+        rm $CodeDir/../data/latest_processed_file.txt
+        $CodeDir/jimbbs2pg.sh
 }
 
