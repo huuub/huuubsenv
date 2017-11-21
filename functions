@@ -2,6 +2,7 @@
 
 # ALIASES
 alias l="ls -ltra | grep -i "
+alias python=python3
 
 
 # attach or create a tmux session named..
