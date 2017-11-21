@@ -9,8 +9,12 @@ function tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
 }
 
-function ssh-d () {
-	ssh datawarehouse.internal.vikingco.com
+function ssh-dwhdwh () {
+	ssh datawarehouse@datawarehouse.internal.vikingco.com
+}
+
+function ssh-hojerdwh () {
+        ssh jeroen.houben@datawarehouse.internal.vikingco.com
 }
 
 function sqlc() {
