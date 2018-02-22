@@ -11,6 +11,7 @@ export VISUAL=vim #edit command from prompt in vim (command mode v)
 # ALIASES
 alias l="ls -ltra | grep -i "
 alias vi=vim
+alias pp='python -mjson.tool'
 
 ## FUNCTIONS
 # attach or create a tmux session named..
