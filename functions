@@ -13,6 +13,7 @@ alias l="ls -ltra | grep -i "
 alias vi=vim
 alias pp='python -mjson.tool'
 alias suroot='sudo -E -s'
+alias ltr="ls -ltra"
 
 ## FUNCTIONS
 # attach or create a tmux session named..
