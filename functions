@@ -4,7 +4,7 @@
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 ## EXPORT VARIABLES
-export myFunctions="/home/jeroen.houben/GIT/huuubsenv/functions"
+export myFunctions="$HOME/unleashed/GIT/huuubsenv/functions"
 export EDITOR=vim
 export VISUAL=vim #edit command from prompt in vim (command mode v)
 
@@ -14,19 +14,13 @@ alias vi=vim
 alias pp='python -mjson.tool'
 alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
+alias mdwhdwh="mosh datawarehouse@dwh -- tmux ls | grep -vq attached && tmux a || tmux new"
+alias mjerdwh="mosh jeroen.houben@dwh -- tmux ls | grep -vq attached && tmux a || tmux new"
 
 ## FUNCTIONS
 # attach or create a tmux session named..
 function tm-ca () {
         tmux attach -d -t $1 || tmux new -s $1
-}
-
-function ssh-dwhdwh () {
-	ssh datawarehouse@datawarehouse.internal.vikingco.com
-}
-
-function ssh-hojerdwh () {
-        ssh jeroen.houben@datawarehouse.internal.vikingco.com
 }
 
 function sqlc() {
