@@ -14,8 +14,13 @@ alias vi=vim
 alias pp='python -mjson.tool'
 alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
-alias mdwhdwh="mosh datawarehouse@dwh -- tmux ls | grep -vq attached && tmux a || tmux new"
-alias mjerdwh="mosh jeroen.houben@dwh -- tmux ls | grep -vq attached && tmux a || tmux new"
+alias mdwhdwh="mosh datawarehouse@dwh"
+alias mjerdwh="mosh jeroen.houben@dwh"
+alias asdwhdwh="autoscreen datawarehouse@dwh"
+alias asjerdwh="autoscreen jeroen.houben@dwh"
+function autoscreen() {
+  AUTOSSH_GATETIME=5 autossh -M 0 -- -o "ServerAliveInterval 5" -o "ServerAliveCountMax 1" -t $@ $'bash -c \'tmpScreenConfig=$(mktemp); echo "termcapinfo xterm* ti@:te" >> $tmpScreenConfig; echo "altscreen on" >> $tmpScreenConfig; echo "maptimeout 1" >> $tmpScreenConfig; exec screen -c $tmpScreenConfig -S "autosession-'$RANDOM$RANDOM$RANDOM$RANDOM$'" -RD\''
+}
 
 ## FUNCTIONS
 # attach or create a tmux session named..
