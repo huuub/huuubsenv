@@ -92,7 +92,8 @@ function start_agent {
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
     [ -f ~/.ssh/githubHuuub ] && /usr/bin/ssh-add ~/.ssh/githubHuuub;
-    [ -f ~/.ssh/githubHuuub ] && /usr/bin/ssh-add ~/.ssh/id_rsa;
+    [ -f ~/.ssh/id_rsa ] && /usr/bin/ssh-add ~/.ssh/id_rsa;
+    [ -f ~/.ssh/id_rsa_github ] && /usr/bin/ssh-add ~/.ssh/id_rsa_github;
 }
 
 # Source SSH settings, if applicable
