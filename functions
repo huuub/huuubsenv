@@ -14,6 +14,7 @@ alias vi=vim
 alias pp='python -mjson.tool'
 alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
+alias tf='tail -f'
 alias mdwhdwh="mosh datawarehouse@dwh"
 alias mjerdwh="mosh jeroen.houben@dwh"
 alias asdwhdwh="autoscreen datawarehouse@dwh"
