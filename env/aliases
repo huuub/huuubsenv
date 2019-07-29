@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+## ALIASES
+alias l="ls -ltra | grep -i "
+alias vi=vim
+alias pp='python -mjson.tool'
+alias suroot='sudo -E -s'
+alias ltr="ls -ltra"
+alias tf='tail -f'
+
+
+## ALIASES WORK
+alias asdwhdwh="autoscreen datawarehouse@dwh"
+alias asjerdwh="autoscreen jeroen.houben@dwh"
+
+alias mvlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/mv"
+alias jimlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/jim"
+alias stlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/stievie"
+alias sbss="/home/datawarehouse/GIT/metrics-dwh-programs/sbss"
+

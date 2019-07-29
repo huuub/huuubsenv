@@ -1,0 +1,11 @@
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+## PDI PENTAHO:
+
+export KETTLE_HOME=${HOME}/byta/Repositories/CONFIG
+export KETTLE_JNDI_HOME=${HOME}/byta/Repositories/CONFIG
+export PENTAHO_JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
+
+eval $(thefuck --alias)
+source $HOME/.bash_profile
+PATH="$PATH:/Users/jeroenhouben/.local/bin"
