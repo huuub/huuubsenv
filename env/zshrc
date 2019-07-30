@@ -75,9 +75,14 @@ set -o vi
 
 ## ADD HUUUBS environment
 
-source $HOME/GIT/huuubsenv/functions
-source $HOME/GIT/huuubsenv/aliases
-source $HOME/GIT/huuubsenv/exports
+source $HOME/GIT/huuubsenv/env/functions
+source $HOME/GIT/huuubsenv/env/aliases
+source $HOME/GIT/huuubsenv/env/exports
 
-[ -f $HOME/GIT/huuubsenv/host/$(hostname) ] && source $HOME/GIT/huuubsenv/host/$(hostname)
+[ -f $HOME/GIT/huuubsenv/env/host/$(hostname) ] && source $HOME/GIT/huuubsenv/env/host/$(hostname)
+
+#If other profiles exist, execute them
+[ -f $HOME/.profile ] && source $HOME/.profile
+[ -f $HOME/.bash_profile ] && source $HOME/.bash_profile
+
 
