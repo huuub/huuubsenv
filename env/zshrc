@@ -85,4 +85,5 @@ source $HOME/GIT/huuubsenv/env/exports
 [ -f $HOME/.profile ] && source $HOME/.profile
 [ -f $HOME/.bash_profile ] && source $HOME/.bash_profile
 
-
+#add alias for transcrypt
+sudo ln -s $HOME/GIT/huuubsenv/bin/transcrypt/transcrypt /usr/local/bin/transcrypt
