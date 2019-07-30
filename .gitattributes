@@ -1,3 +1,4 @@
 sensitive_file filter=crypt diff=crypt
 env/identities/* filter=crypt diff=crypt
+env/config filter=crypt diff=crypt
 
