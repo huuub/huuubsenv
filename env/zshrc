@@ -87,3 +87,5 @@ source $HOME/GIT/huuubsenv/env/exports
 
 #add alias for transcrypt
 [ ! -f /usr/local/bin/transcrypt ] && ln -s $HOME/GIT/huuubsenv/bin/transcrypt/transcrypt /usr/local/bin/transcrypt
+
+export PATH="/usr/local/bin:$PATH"
