@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
 ## ALIASES
-alias l="ls -ltra | grep -i "
+alias l="ls -ltra | grep -i"
 alias vi=vim
 alias pp='python -mjson.tool'
 alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
 alias tf='tail -f'
-
+alias sr='screen -r'
 
 ## ALIASES WORK
 alias asdwhdwh="autoscreen datawarehouse@dwh"
