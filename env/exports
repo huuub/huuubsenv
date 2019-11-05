@@ -1,6 +1,5 @@
 #!/bin/bash -e 
 
 ## EXPORT VARIABLES
-export myfunctions="$HOME/GIT/huuubsenv/env/functions"
 export EDITOR=vim
 export VISUAL=vim #edit command from prompt in vim (command mode v)

@@ -8,6 +8,7 @@ alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
 alias tf='tail -f'
 alias sr='screen -r'
+alias myfunctions='$HOME/GIT/huuubsenv/env/functions'
 
 ## ALIASES WORK
 alias asdwhdwh="autoscreen datawarehouse@dwh"
