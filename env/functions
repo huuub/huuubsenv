@@ -1,6 +1,5 @@
 #!/bin/bash
 
-eval $(thefuck --alias)
 
 ## PATH
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
