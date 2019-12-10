@@ -8,7 +8,10 @@ alias suroot='sudo -E -s'
 alias ltr="ls -ltra"
 alias tf='tail -f'
 alias sr='screen -r'
-alias myfunctions='$HOME/GIT/huuubsenv/env/functions'
+alias vimyfunctions='vi $HOME/GIT/huuubsenv/env/functions'
+
+alias asalp="autoscreen jeroen@192.168.1.2"
+alias asalpnet="autoscreen alpnet"
 
 ## ALIASES WORK
 alias asdwhdwh="autoscreen datawarehouse@dwh"
