@@ -21,4 +21,4 @@ alias mvlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/mv"
 alias jimlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/jim"
 alias stlog="/home/datawarehouse/GIT/metrics-dwh-programs/sbss/log/stievie"
 alias sbss="/home/datawarehouse/GIT/metrics-dwh-programs/sbss"
-
+alias sshRouter="ssh -L 1800:192.168.1.1:8080 alpnet"
